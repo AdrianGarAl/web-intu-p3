@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laboratorio de diseño adaptativo y responsive</title>
+  <meta name="description" content="Interfaz demostrativa para la práctica de Interfaces de Usuario: diseño responsive, diseño adaptativo y usabilidad.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <header class="site-header">
+    <div class="container header-grid">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <span class="brand-mark">IU</span>
+        <span>
+          <strong>Diseño adaptado</strong>
+          <small>Responsive · Adaptativo · Usabilidad</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle__icon" aria-hidden="true"></span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+        <a href="#responsive">Responsive</a>
+        <a href="#adaptativo">Adaptativo</a>
+        <a href="#usabilidad">Usabilidad</a>
+        <a href="#pruebas">Pruebas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero section" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Interfaces adaptadas</p>
+          <h1>Laboratorio visual de interfaces responsive y adaptativas</h1>
+          <p class="hero-text">
+            Esta interfaz muestra cómo una misma página puede cambiar entre escritorio, tableta y móvil manteniendo
+            legibilidad, navegación clara, controles cómodos y buen rendimiento percibido.
+          </p>
+          <div class="hero-actions" aria-label="Acciones principales">
+            <a class="button button-primary" href="#responsive">Ver demostración</a>
+          </div>
+        </div>
+
+        <div class="device-demo" aria-label="Representación visual de tres dispositivos">
+          <div class="device device-desktop">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="device device-tablet">
+            <span></span><span></span>
+          </div>
+          <div class="device device-mobile">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft-section" aria-labelledby="estado-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Detección visual</p>
+          <h2 id="estado-title">El propio diseño muestra el contexto de pantalla</h2>
+          <p>
+            La tarjeta siguiente cambia mediante CSS según el ancho de la ventana.
+          </p>
+        </div>
+
+        <div class="viewport-card" aria-live="polite">
+          <span class="viewport-label viewport-label--desktop">Vista activa: escritorio</span>
+          <span class="viewport-label viewport-label--tablet">Vista activa: tableta</span>
+          <span class="viewport-label viewport-label--mobile">Vista activa: móvil</span>
+          <p>
+            Redimensiona la ventana para observar cómo cambian la navegación, la rejilla, la prioridad del contenido,
+            la posición de las tarjetas y el tamaño de los controles.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="responsive" aria-labelledby="responsive-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Responsive design</p>
+          <h2 id="responsive-title">Fundamentos aplicados en la interfaz</h2>
+          <p>
+            Estos bloques ejemplifican los principios desarrollados en la memoria: rejillas fluidas, recursos flexibles,
+            media queries y enfoque mobile first.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-number">01</span>
+            <h3>Rejilla fluida</h3>
+            <p>
+              Las tarjetas usan una cuadrícula flexible que aumenta o reduce el número de columnas según el espacio
+              disponible. En móvil se apilan para evitar desplazamiento horizontal.
+            </p>
+            <code>grid-template-columns: repeat(auto-fit, minmax(...))</code>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-number">02</span>
+            <h3>Recursos flexibles</h3>
+            <p>
+              Los elementos gráficos se ajustan al contenedor y se evita depender de anchuras fijas. La composición
+              mantiene proporciones estables en diferentes tamaños.
+            </p>
+            <code>max-width: 100%</code>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-number">03</span>
+            <h3>Media queries</h3>
+            <p>
+              Los puntos de ruptura modifican el menú, la distribución de columnas y el espaciado cuando el contenido
+              empieza a necesitar otra presentación.
+            </p>
+            <code>@media (max-width: 760px)</code>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-number">04</span>
+            <h3>Mobile first</h3>
+            <p>
+              La base del diseño prioriza una experiencia simple y funcional. Desde ahí se añaden mejoras visuales en
+              pantallas más grandes.
+            </p>
+            <code>min-width / progressive enhancement</code>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section split-section" id="adaptativo" aria-labelledby="adaptativo-title">
+      <div class="container split-grid">
+        <div>
+          <p class="eyebrow">Diseño adaptativo</p>
+          <h2 id="adaptativo-title">Simulación de decisiones por contexto</h2>
+          <p>
+            A diferencia de la adaptación puramente fluida, aquí se simula la selección de una configuración concreta:
+            móvil, tableta o escritorio. El contenido no solo cambia de tamaño; también cambia su prioridad y forma de
+            presentación.
+          </p>
+
+          <form class="mode-panel" aria-label="Simulador de modo adaptativo">
+            <fieldset>
+              <legend>Selecciona una experiencia</legend>
+              <label>
+                <input type="radio" name="layoutMode" value="mobile">
+                Móvil: tareas rápidas
+              </label>
+              <label>
+                <input type="radio" name="layoutMode" value="tablet">
+                Tableta: lectura y consulta
+              </label>
+              <label>
+                <input type="radio" name="layoutMode" value="desktop" checked>
+                Escritorio: visión completa
+              </label>
+            </fieldset>
+
+            <label class="switch-row">
+              <input type="checkbox" id="lightMode">
+              <span>Activar modo ligero</span>
+            </label>
+          </form>
+        </div>
+
+        <article class="adaptive-preview" id="adaptivePreview">
+          <header>
+            <span class="preview-chip" id="previewChip">Escritorio</span>
+            <h3 id="previewTitle">Panel completo de análisis</h3>
+            <p id="previewText">
+              Se muestran métricas, tabla comparativa, filtros y explicaciones complementarias para aprovechar el
+              espacio disponible.
+            </p>
+          </header>
+
+          <div class="preview-layout">
+            <div class="preview-main">
+              <h4>Tarea prioritaria</h4>
+              <p>Comparar cómo se reorganiza la interfaz según el contexto seleccionado.</p>
+              <button class="button button-primary" type="button" id="demoButton">Probar acción</button>
+            </div>
+            <aside class="preview-aside">
+              <h4>Contenido secundario</h4>
+              <p>Este bloque puede reducirse u ocultarse en contextos con menos espacio o menor rendimiento.</p>
+            </aside>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section soft-section" id="usabilidad" aria-labelledby="usabilidad-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Usabilidad</p>
+          <h2 id="usabilidad-title">Componentes diseñados para ser utilizables</h2>
+          <p>
+            La adaptación se evalúa por la facilidad para realizar tareas. Estos elementos muestran decisiones concretas
+            sobre navegación, legibilidad, interacción táctil, formularios y accesibilidad.
+          </p>
+        </div>
+
+        <div class="usability-grid">
+          <article class="check-card">
+            <h3>Controles táctiles</h3>
+            <p>Los botones tienen altura suficiente y separación visible para reducir pulsaciones erróneas.</p>
+            <div class="touch-targets" aria-label="Ejemplos de controles táctiles">
+              <button type="button">Aceptar</button>
+              <button type="button">Guardar</button>
+              <button type="button">Cancelar</button>
+            </div>
+          </article>
+
+          <article class="check-card">
+            <h3>Formulario breve</h3>
+            <p>El formulario usa etiquetas visibles, tipos de campo adecuados y una estructura de una columna en móvil.</p>
+            <form class="sample-form">
+              <label for="name">Nombre</label>
+              <input id="name" type="text" autocomplete="name" placeholder="Adrián García">
+              <label for="email">Correo electrónico</label>
+              <input id="email" type="email" autocomplete="email" placeholder="usuario@dominio.es">
+              <label for="topic">Consulta</label>
+              <select id="topic">
+                <option>Diseño responsive</option>
+                <option>Diseño adaptativo</option>
+                <option>Accesibilidad</option>
+              </select>
+            </form>
+          </article>
+
+          <article class="check-card">
+            <h3>Jerarquía visual</h3>
+            <p>El contenido se organiza por títulos, subtítulos, tarjetas y llamadas a la acción para facilitar el escaneo.</p>
+            <div class="mini-article">
+              <strong>Contenido esencial</strong>
+              <span>Información secundaria</span>
+              <em>Acción recomendada</em>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pruebas" aria-labelledby="pruebas-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Evaluación práctica</p>
+          <h2 id="pruebas-title">Comprobaciones de adaptación</h2>
+          <p>
+            La interfaz puede comprobarse en distintos tamaños de pantalla para observar cómo cambian la navegación,
+            las columnas, la prioridad del contenido y el comportamiento de los controles.
+          </p>
+        </div>
+
+        <div class="test-list">
+          <article>
+            <h3>Escritorio</h3>
+            <p>Comprobar navegación horizontal, rejilla con varias columnas, panel adaptativo completo y uso del espacio.</p>
+          </article>
+          <article>
+            <h3>Tableta</h3>
+            <p>Comprobar transición intermedia, columnas reducidas, legibilidad y conservación de contenido principal.</p>
+          </article>
+          <article>
+            <h3>Móvil</h3>
+            <p>Comprobar menú desplegable, una sola columna, controles táctiles y ausencia de desplazamiento horizontal.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Diseño adaptativo y usabilidad</strong>
+        <p>Interfaz demostrativa sobre adaptación visual, navegación, usabilidad y accesibilidad.</p>
+      </div>
+      <a href="#inicio">Volver arriba</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
